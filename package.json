@@ -4,10 +4,11 @@
   "description": "Config module for AcyOrt",
   "main": "index.js",
   "scripts": {
-    "test": "npm run test:lint && npm run test:cover",
+    "test": "npm run test:lint && npm run test:cover && npm run clean",
     "test:unit": "mocha --reporter dot --require intelli-espower-loader ./test",
     "test:lint": "eslint .",
-    "test:cover": "istanbul cover --print both _mocha ./test"
+    "test:cover": "istanbul cover --print both _mocha ./test",
+    "clean": "rm ./test/config.yml"
   },
   "repository": {
     "type": "git",
