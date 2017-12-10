@@ -1,7 +1,7 @@
 {
-  "name": "acyort-generator",
+  "name": "acyort-config",
   "version": "0.1.0",
-  "description": "Generator for AcyOrt",
+  "description": "Config module for AcyOrt",
   "main": "index.js",
   "scripts": {
     "test": "npm run test:lint && npm run test:cover",
@@ -11,19 +11,18 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/acyortjs/acyort-generator.git"
+    "url": "git+https://github.com/acyortjs/acyort-config.git"
   },
   "keywords": [
     "acyort",
-    "generate",
-    "file"
+    "config"
   ],
   "author": "LoeiFy@gmail.com",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/acyortjs/acyort-generator/issues"
+    "url": "https://github.com/acyortjs/acyort-config/issues"
   },
-  "homepage": "https://github.com/acyortjs/acyort-generator#readme",
+  "homepage": "https://github.com/acyortjs/acyort-config#readme",
   "devDependencies": {
     "eslint": "^4.13.0",
     "eslint-config-airbnb-base": "^12.1.0",

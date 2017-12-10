@@ -1,11 +1,11 @@
-# acyort-generator
+# acyort-config
 
-Generator for [AcyOrt](https://github.com/acyortjs/acyort)
+Config module for [AcyOrt](https://github.com/acyortjs/acyort)
 
 ## Install
 
 ```bash
-$ npm i acyort-generator -S
+$ npm i acyort-config -S
 ```
 
 ## Usage
