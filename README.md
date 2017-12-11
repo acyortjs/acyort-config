@@ -44,17 +44,13 @@ token:
 ```
 
 ```js
-/*
-npm i fs -S
-npm i acyort-render -S
-*/
+// npm i acyort-render -S
 
-const fs = require('fs-extra')
+const fs = require('fs')
 const Renderer = require('acyort-render')
 
 const config = new Config({
   base: __dirname,
-  fs,
   renderer: new Renderer()
 })
 

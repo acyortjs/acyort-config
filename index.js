@@ -1,17 +1,17 @@
+const fs = require('fs')
 const pathFn = require('path')
 const defaults = require('./lib/defaults')
 const parse = require('./lib/parse')
 
 class Config {
-  constructor({ fs, renderer, base }) {
-    this.fs = fs
+  constructor({ renderer, base }) {
     this.renderer = renderer
     this.base = base
     this.path = pathFn.join(base, 'config.yml')
   }
 
   get value() {
-    if (!this.fs.existsSync(this.path)) {
+    if (!fs.existsSync(this.path)) {
       return null
     }
 

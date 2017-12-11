@@ -1,6 +1,6 @@
 {
   "name": "acyort-config",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Config module for AcyOrt",
   "main": "index.js",
   "scripts": {
@@ -29,7 +29,6 @@
     "eslint": "^4.13.0",
     "eslint-config-airbnb-base": "^12.1.0",
     "eslint-plugin-import": "^2.8.0",
-    "fs-extra": "^4.0.3",
     "intelli-espower-loader": "^1.0.1",
     "istanbul": "^0.4.5",
     "mocha": "^4.0.1",

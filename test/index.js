@@ -1,4 +1,4 @@
-const fs = require('fs-extra')
+const fs = require('fs')
 const path = require('path')
 const assert = require('power-assert')
 const Renderer = require('acyort-render')
@@ -12,7 +12,7 @@ function setYml(url) {
     yml[2] = `url: ${url}`
   }
   yml = yml.join('\n')
-  fs.outputFileSync(path.join(__dirname, 'config.yml'), yml)
+  fs.writeFileSync(path.join(__dirname, 'config.yml'), yml)
 }
 
 describe('config', () => {
@@ -21,7 +21,6 @@ describe('config', () => {
 
     const config = new Config({
       base: __dirname,
-      fs,
       renderer: new Renderer()
     })
     const { value } = config
@@ -56,7 +55,6 @@ describe('config', () => {
   it('no exits', () => {
     const config = new Config({
       base: process.cwd(),
-      fs,
       renderer: new Renderer()
     })
 
@@ -68,7 +66,6 @@ describe('config', () => {
 
     const config = new Config({
       base: __dirname,
-      fs,
       renderer: new Renderer()
     })
 
@@ -80,7 +77,6 @@ describe('config', () => {
 
     let config = new Config({
       base: __dirname,
-      fs,
       renderer: new Renderer()
     })
 
@@ -90,7 +86,6 @@ describe('config', () => {
 
     config = new Config({
       base: __dirname,
-      fs,
       renderer: new Renderer()
     })
 
