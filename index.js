@@ -41,3 +41,4 @@ class Config {
 }
 
 module.exports = Config
+module.exports.defaults = defaults

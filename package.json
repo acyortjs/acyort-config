@@ -1,6 +1,6 @@
 {
   "name": "acyort-config",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "Config module for AcyOrt",
   "main": "index.js",
   "scripts": {
