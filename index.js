@@ -1,11 +1,12 @@
 const fs = require('fs')
 const pathFn = require('path')
+const Render = require('acyort-render')
 const defaults = require('./lib/defaults')
 const parse = require('./lib/parse')
 
 class Config {
-  constructor({ renderer, base }) {
-    this.renderer = renderer
+  constructor(base) {
+    this.renderer = new Render()
     this.base = base
     this.path = pathFn.join(base, 'config.yml')
   }

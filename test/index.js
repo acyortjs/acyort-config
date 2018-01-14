@@ -1,7 +1,6 @@
 const fs = require('fs')
 const path = require('path')
 const assert = require('power-assert')
-const Renderer = require('acyort-render')
 const moment = require('moment-timezone')
 const Config = require('../')
 const text = require('./fixtures/yml')
@@ -19,15 +18,12 @@ describe('config', () => {
   it('values', () => {
     setYml()
 
-    const config = new Config({
-      base: __dirname,
-      renderer: new Renderer()
-    })
+    const config = new Config(__dirname)
     const { value } = config
 
     assert(value.authors.length === 0)
     assert(value.base === __dirname)
-    assert(value.category_dir === 'category')
+    assert(value.category_dir === 'categories')
     assert(value.default_category === 'uncategorized')
     assert(value.description === 'A Node.js blog tool powered by GitHub.')
     assert(value.language === 'default')
@@ -36,12 +32,12 @@ describe('config', () => {
     assert(value.per_page === 10)
     assert(value.plugins[0] === 'acyort-rss')
     assert(value.root === '/')
-    assert(value.post_dir === 'post')
+    assert(value.post_dir === 'posts')
     assert(value.public_dir === '/')
     assert(value.repository === 'acyortjs.github.io')
     assert(value.scripts.length === 0)
     assert(value.scripts_dir === 'scripts')
-    assert(value.tag_dir === 'tag')
+    assert(value.tag_dir === 'tags')
     assert(value.theme === 'ccc45')
     assert(value.timezone === moment.tz.guess())
     assert(value.thumbnail_mode === 2)
@@ -53,42 +49,23 @@ describe('config', () => {
   })
 
   it('no exits', () => {
-    const config = new Config({
-      base: process.cwd(),
-      renderer: new Renderer()
-    })
-
+    const config = new Config(process.cwd())
     assert(config.value === null)
   })
 
   it('root', () => {
     setYml('https://acyortjs.github.io/child/')
-
-    const config = new Config({
-      base: __dirname,
-      renderer: new Renderer()
-    })
-
+    const config = new Config(__dirname)
     assert(config.value.root === '/child')
   })
 
   it('wrong url', () => {
     setYml('')
-
-    let config = new Config({
-      base: __dirname,
-      renderer: new Renderer()
-    })
-
+    let config = new Config(__dirname)
     assert(config.value === null)
 
     setYml('acyortjs.github.io')
-
-    config = new Config({
-      base: __dirname,
-      renderer: new Renderer()
-    })
-
+    config = new Config(__dirname)
     assert(config.value === null)
   })
 })

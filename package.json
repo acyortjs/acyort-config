@@ -1,6 +1,6 @@
 {
   "name": "acyort-config",
-  "version": "0.1.3",
+  "version": "0.1.4",
   "description": "Config module for AcyOrt",
   "main": "index.js",
   "scripts": {
@@ -25,7 +25,6 @@
   },
   "homepage": "https://github.com/acyortjs/acyort-config#readme",
   "devDependencies": {
-    "acyort-render": "^0.1.0",
     "eslint": "^4.13.0",
     "eslint-config-airbnb-base": "^12.1.0",
     "eslint-plugin-import": "^2.8.0",
@@ -35,6 +34,7 @@
     "power-assert": "^1.4.4"
   },
   "dependencies": {
+    "acyort-render": "^0.1.0",
     "moment-timezone": "^0.5.14"
   }
 }

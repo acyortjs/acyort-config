@@ -44,18 +44,11 @@ token:
 ```
 
 ```js
-// npm i acyort-render -S
-
 const fs = require('fs')
-const Renderer = require('acyort-render')
 
-const config = new Config({
-  base: __dirname,
-  renderer: new Renderer()
-})
+const config = new Config(__dirname)
 
 console.log(config.value)
-
 /*
 { title: 'AcyOrt',
   description: 'A Node.js blog tool powered by GitHub.',
