@@ -40,11 +40,10 @@ describe('config', () => {
     assert(value.tag_dir === 'tags')
     assert(value.theme === 'ccc45')
     assert(value.timezone === moment.tz.guess())
-    assert(value.thumbnail_mode === 2)
     assert(value.title === 'AcyOrt')
     assert(value.url === 'https://acyortjs.github.io')
     assert(value.user === 'acyortjs')
-    assert(value.line_numbers === null)
+    assert(value.line_numbers === true)
     assert(value.token === null)
   })
 
@@ -60,10 +59,6 @@ describe('config', () => {
   })
 
   it('wrong url', () => {
-    setYml('')
-    let config = new Config(__dirname)
-    assert(config.value === null)
-
     setYml('acyortjs.github.io')
     config = new Config(__dirname)
     assert(config.value === null)

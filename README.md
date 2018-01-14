@@ -36,7 +36,6 @@ timezone:
 language:
 line_numbers:
 order:
-thumbnail_mode:
 category_dir:
 tag_dir:
 post_dir:
@@ -68,9 +67,8 @@ console.log(config.value)
   authors: [],
   timezone: 'Asia/Shanghai',
   language: 'default',
-  line_numbers: null,
+  line_numbers: true,
   order: 'created',
-  thumbnail_mode: 2,
   category_dir: 'category',
   tag_dir: 'tag',
   post_dir: 'post',

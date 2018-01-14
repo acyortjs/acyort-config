@@ -18,7 +18,6 @@ timezone:
 language:
 line_numbers:
 order:
-thumbnail_mode:
 category_dir:
 tag_dir:
 post_dir:
