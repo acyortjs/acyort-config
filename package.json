@@ -1,7 +1,7 @@
 {
   "name": "acyort-config",
-  "version": "1.0.0",
-  "description": "Config module for AcyOrt",
+  "version": "1.0.1",
+  "description": "Configs for AcyOrt",
   "main": "index.js",
   "scripts": {
     "test": "npm run test:lint && npm run test:cover && npm run clean",
@@ -16,7 +16,9 @@
   },
   "keywords": [
     "acyort",
-    "config"
+    "config",
+    "default",
+    "values"
   ],
   "author": "LoeiFy@gmail.com",
   "license": "MIT",

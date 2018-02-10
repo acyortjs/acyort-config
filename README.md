@@ -3,7 +3,7 @@
 [![Build Status](https://travis-ci.org/acyortjs/acyort-config.svg?branch=master)](https://travis-ci.org/acyortjs/acyort-config)
 [![codecov](https://codecov.io/gh/acyortjs/acyort-config/branch/master/graph/badge.svg)](https://codecov.io/gh/acyortjs/acyort-config)
 
-Config module for [AcyOrt](https://github.com/acyortjs/acyort)
+Configs for [AcyOrt](https://github.com/acyortjs/acyort)
 
 ## Install
 
