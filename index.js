@@ -1,12 +1,11 @@
 const fs = require('fs')
 const pathFn = require('path')
-const Render = require('acyort-render')
+const render = require('acyort-render')
 const defaults = require('./lib/defaults')
-const parse = require('./lib/parse')
+const parser = require('./lib/parser')
 
 class Config {
   constructor(base) {
-    this.renderer = new Render()
     this.base = base
     this.path = pathFn.join(base, 'config.yml')
   }
@@ -16,7 +15,7 @@ class Config {
       return null
     }
 
-    const config = this.renderer.render('yaml', { path: this.path })
+    const config = render('yaml', { path: this.path })
 
     Object.keys(defaults).forEach((key) => {
       if (config[key] === undefined || config[key] === null) {
@@ -24,7 +23,7 @@ class Config {
       }
     })
 
-    const parsed = parse(config.url)
+    const parsed = parser(config.url)
 
     if (!parsed) {
       return null
