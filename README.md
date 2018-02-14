@@ -43,11 +43,11 @@ token:
 ```
 
 ```js
-const fs = require('fs')
+const getConfig = require('acyort-config')
 
-const config = new Config(__dirname)
+const config = getConfig(__dirname)
 
-console.log(config.value)
+console.log(config)
 /*
 { title: 'AcyOrt',
   description: 'A Node.js blog tool powered by GitHub.',
