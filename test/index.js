@@ -2,7 +2,7 @@ const fs = require('fs')
 const path = require('path')
 const assert = require('power-assert')
 const moment = require('moment-timezone')
-const Config = require('../')
+const getConfig = require('../')
 const text = require('./fixtures/yml')
 
 function setYml(url) {
@@ -18,8 +18,7 @@ describe('config', () => {
   it('values', () => {
     setYml()
 
-    const config = new Config(__dirname)
-    const { value } = config
+    const value = getConfig(__dirname)
 
     assert(value.authors.length === 0)
     assert(value.base === __dirname)
@@ -48,19 +47,19 @@ describe('config', () => {
   })
 
   it('no exits', () => {
-    const config = new Config(process.cwd())
-    assert(config.value === null)
+    const config = getConfig(process.cwd())
+    assert(config === null)
   })
 
   it('root', () => {
     setYml('https://acyortjs.github.io/child/')
-    const config = new Config(__dirname)
-    assert(config.value.root === '/child')
+    const config = getConfig(__dirname)
+    assert(config.root === '/child')
   })
 
   it('wrong url', () => {
     setYml('acyortjs.github.io')
-    config = new Config(__dirname)
-    assert(config.value === null)
+    const config = getConfig(__dirname)
+    assert(config === null)
   })
 })

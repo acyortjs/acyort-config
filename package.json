@@ -1,6 +1,6 @@
 {
   "name": "acyort-config",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Configs for AcyOrt",
   "main": "index.js",
   "scripts": {
@@ -36,7 +36,7 @@
     "power-assert": "^1.4.4"
   },
   "dependencies": {
-    "acyort-render": "^1.0.0",
-    "moment-timezone": "^0.5.14"
+    "moment-timezone": "^0.5.14",
+    "yamljs": "^0.3.0"
   }
 }

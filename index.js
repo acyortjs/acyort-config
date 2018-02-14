@@ -1,44 +1,39 @@
 const fs = require('fs')
 const pathFn = require('path')
-const render = require('acyort-render')
+const yaml = require('yamljs')
 const defaults = require('./lib/defaults')
 const parser = require('./lib/parser')
 
-class Config {
-  constructor(base) {
-    this.base = base
-    this.path = pathFn.join(base, 'config.yml')
+function getConfig(base) {
+  const path = pathFn.join(base, 'config.yml')
+
+  if (!fs.existsSync(path)) {
+    return null
   }
 
-  get value() {
-    if (!fs.existsSync(this.path)) {
-      return null
+  const config = yaml.load(path)
+
+  Object.keys(defaults).forEach((key) => {
+    if (config[key] === undefined || config[key] === null) {
+      config[key] = defaults[key]
     }
+  })
 
-    const config = render('yaml', { path: this.path })
+  const parsed = parser(config.url)
 
-    Object.keys(defaults).forEach((key) => {
-      if (config[key] === undefined || config[key] === null) {
-        config[key] = defaults[key]
-      }
-    })
-
-    const parsed = parser(config.url)
-
-    if (!parsed) {
-      return null
-    }
-
-    if (parsed.root) {
-      config.root = parsed.root
-    }
-
-    config.url = parsed.url
-    config.base = this.base
-
-    return config
+  if (!parsed) {
+    return null
   }
+
+  if (parsed.root) {
+    config.root = parsed.root
+  }
+
+  config.url = parsed.url
+  config.base = base
+
+  return config
 }
 
-module.exports = Config
+module.exports = getConfig
 module.exports.defaults = defaults
