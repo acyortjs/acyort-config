@@ -44,9 +44,11 @@ token:
 
 ```js
 const getConfig = require('acyort-config')
+const { defaults } = require('acyort-config')
 
 const config = getConfig(__dirname)
 
+console.log(defaults)
 console.log(config)
 /*
 { title: 'AcyOrt',
