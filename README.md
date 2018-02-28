@@ -68,7 +68,7 @@ console.log(config)
   public_dir: '/',
   authors: [],
   timezone: 'Asia/Shanghai',
-  language: 'default',
+  language: 'en',
   line_numbers: true,
   order: 'created',
   category_dir: 'category',
